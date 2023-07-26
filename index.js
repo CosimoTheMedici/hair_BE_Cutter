@@ -25,7 +25,7 @@ app.use(express.json());
 
 app.use(cookieParser());
 
-app.get('/',(req,res)=> res.json("SERVER Working.."));
+app.get('/',(req,res)=> res.json("SERVER Working..p"));
 app.use('/create',require('./src/routes/Router'));
 app.use('/api/v1/auth/',require('./src/routes/authRouter'));
 app.use('/api/v1/properties',require('./src/routes/propertiesRouter'));
