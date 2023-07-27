@@ -9,6 +9,8 @@ const { errorHandle } = require('./src/middleware/errorHandler');
 const cookieParser = require('cookie-parser');
 const credentials = require('./src/middleware/credentials');
 const PORT = process.env.PORT || 3500;
+require('dotenv').config();
+
 
 
 //custom middleware logger
@@ -25,7 +27,7 @@ app.use(express.json());
 
 app.use(cookieParser());
 
-app.get('/',(req,res)=> res.json("SERVER Working..p"));
+app.get('/',(req,res)=> res.json("SERVER Working..p  "+process.env.REFRESH_TOKEN_SECRET));
 app.use('/create',require('./src/routes/Router'));
 app.use('/api/v1/auth/',require('./src/routes/authRouter'));
 app.use('/api/v1/properties',require('./src/routes/propertiesRouter'));
