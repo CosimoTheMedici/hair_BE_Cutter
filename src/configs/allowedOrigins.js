@@ -8,7 +8,9 @@ const allowedOrigins = [
         'http://localhost:5173',
         'https://localhost:5173',
         'http://localhost:5173/',
-        'https://localhost:5173/'
+        'https://localhost:5173/',
+        'https://occupational-safety.netlify.app/',
+        'https://occupational-safety.netlify.app/'
 ];
 
 module.exports = allowedOrigins;
