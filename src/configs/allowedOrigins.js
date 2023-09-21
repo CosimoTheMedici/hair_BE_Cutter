@@ -12,6 +12,7 @@ const allowedOrigins = [
         'https://occupational-safety.netlify.app/',
         'https://occupational-safety.netlify.app',
         'https://newrentalapp.netlify.app/',
+        'https://newrentalapp.netlify.app'
 ];
 
 module.exports = allowedOrigins;
