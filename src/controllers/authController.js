@@ -71,7 +71,13 @@ exports.loginUser = (req,res) =>{
             results.refreshToken = undefined;
             results.id = undefined;
             const accessToken = jwt.sign(
-                                    {result:results},
+                                    {
+                                        email: results.email,
+                                        status: results.status,
+                                        user_category: results.user_category,
+                                        uuid: results.uuid,
+                                        business_id: results.business_id
+                                    },
                                     process.env.ACCESS_TOKEN_SECRET,
                                     {expiresIn:"1h" }
                                 );
