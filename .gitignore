@@ -27,7 +27,7 @@ logs/
 *.sublime-workspace
 
 # Environment variables and secrets
-#.env
+.env
 .env.local
 .env.*.local
 .env.*.production
