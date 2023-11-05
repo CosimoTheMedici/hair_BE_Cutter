@@ -83,7 +83,9 @@ exports.addProductToCart = async (req, res) => {
   // });
 };
 exports.likeProduct = (req, res) => {
-  //console.log("req", req);
+  console.log("req",     process.env.PRODUCT_COOKIE_TOKEN_SECRET
+  );
+  return sendResponse(res, 1, process.env.PRODUCT_COOKIE_TOKEN_SECRET, 200, "data");
   const data = req.body;
   const productCookie = jwt.sign(
     { data: data },
