@@ -83,9 +83,7 @@ exports.addProductToCart = async (req, res) => {
   // });
 };
 exports.likeProduct = (req, res) => {
-  console.log("req",     process.env.PRODUCT_COOKIE_TOKEN_SECRET
-  );
-  return sendResponse(res, 1, process.env.PRODUCT_COOKIE_TOKEN_SECRET, 200, "data");
+ 
   const data = req.body;
   const productCookie = jwt.sign(
     { data: data },
@@ -98,15 +96,17 @@ exports.likeProduct = (req, res) => {
     secure: true,
     maxAge: 24 * 60 * 60 * 1000,
   });
-  WatchManiaModel.likeProduct(data, (err, results) => {
-    console.log("results", results);
-    if (err) {
-      console.log(err);
-      return sendResponse(res, 0, "", 500, "something went wrong" + err);
-    }
+  // WatchManiaModel.likeProduct(data, (err, results) => {
+  //   console.log("results", results);
+  //   if (err) {
+  //     console.log(err);
+  //     return sendResponse(res, 0, "", 500, "something went wrong" + err);
+  //   }
 
-    return sendResponse(res, 1, results, 200, "data");
-  });
+  //   return sendResponse(res, 1, results, 200, "data");
+  // });
+       return sendResponse(res, 1, productCookie, 200, "data");
+
   
 };
 
